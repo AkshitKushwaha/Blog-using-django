@@ -38,6 +38,12 @@
 
             </div>
           </li>
+        {% else %}
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'category-list' %}">Categories</a>
+          </li>
+
         {% endif %}
 
         {% if user.is_authenticated %}
