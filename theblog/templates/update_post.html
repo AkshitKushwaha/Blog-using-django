@@ -4,13 +4,20 @@
 
 {% block content %}
 
-<h1>Update Post....</h1>
-</br></br>
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button class="btn btn-secondary">Update</button>
-</form>
+{% if user.is_authenticated %}
 
+    <h1>Update Post....</h1>
+    </br></br>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-secondary">Update</button>
+    </form>
+
+{% else %}
+
+Unauthorized, Access Denied !
+
+{% endif %}
 
 {% endblock %}
