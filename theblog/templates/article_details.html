@@ -26,7 +26,18 @@
 
     {% csrf_token %}
 
-    <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-success btn-sm">Like</button> - {{ total_likes}} Likes
+{% if user.is_authenticated %} 
+
+    {% if liked %}
+        <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-danger btn-sm">Unlike</button> 
+    {% else %}
+        <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-success btn-sm">Like</button> 
+    {% endif %}
+{% else %}
+    <small>Login to like.</small>
+{% endif %}
+
+    - {{ total_likes}} Likes
 
 </form>
 
