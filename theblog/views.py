@@ -7,7 +7,7 @@ from django.http import HttpResponseRedirect
 
 # Create your views here.
 
-# Using cass based views
+# Using class based views
 
 #def home(request):
     #return render(request, 'home.html', {})
